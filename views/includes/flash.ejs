@@ -1,0 +1,16 @@
+<% 
+  // Check if the 'success' message exists and has a non-zero length
+  if (success && success.length) { 
+%>
+    <!-- Create a Bootstrap alert box with success styling -->
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <!-- Display the 'success' message passed from the server -->
+        <%= success %>
+
+        <!-- Button to close (dismiss) the alert box -->
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    </div>
+<% 
+  // End the if block after displaying the success message
+  } 
+%>

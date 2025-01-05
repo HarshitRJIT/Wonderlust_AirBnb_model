@@ -1,0 +1,104 @@
+*{
+    margin: 10px, 8px, 8px, 10px;
+}
+
+body{
+    margin: 200px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer{
+    background-color: gray;
+    justify-content: center;
+
+} 
+.container{
+    flex: 1;
+}
+
+/* navbar */
+.navbar{
+    height: 5rem;
+    
+}
+
+.fa-comapass{
+    color: #fe424d;
+    font-size: 2rem;
+}
+
+.nav-link{
+    color: #424242 !important;
+
+}
+
+/* footer */
+ .f-info-links a{
+    text-decoration: none;
+    color: #222222;
+    justify-content: center;
+}
+
+.f-info-links a:hover{
+    text-decoration: underline;
+    color: blueviolet;
+}
+
+.f-info-socials{
+    width: 100%;
+    font-size: 1.2rem;
+    margin-right: 5rem;
+    
+}
+
+/* .f-info-socials i{
+    margin-right: 1rem;
+} */
+
+.f-info-links {
+    width: 100%;
+}
+
+.f-info {
+    text-align: center;
+    display: flex;
+    background-color: #ebebeb8e;
+    height: 8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+} 
+
+
+/* card effect */
+.card-img-overlay{
+    opacity: 0;
+}
+
+.card-img-overlay:hover{
+    opacity: 0.2;
+    color: white;
+}
+
+.btn{
+    background-color: #fe424d !important;
+    border: none !important;
+}
+
+/* review */
+.review{
+    margin-top: 1rem;
+    border: blueviolet;
+    border-radius: 4%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.review-box{
+    background-color: darkslategrey;
+}
+
+

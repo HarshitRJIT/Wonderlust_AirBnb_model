@@ -1,0 +1,75 @@
+<% layout("/layouts/boilerplate") %>
+
+<body class="bg-light">
+
+  <!-- Container to center the content -->
+  <div class="container mt-5">
+    
+    <!-- Listing Details Card -->
+    <div class="card shadow-lg mb-4">
+      <div class="card-body">
+        <h3 class="card-title text-center text-primary"><%= listing.title %></h3>
+        <img src="<%= listing.image %>" class="card-img-top show-img mb-3" alt="listing_image">
+        <a href="/book/<%= listing._id %>" class="btn btn-success">Book Now</a>
+        <ul class="list-group">
+          <li class="list-group-item"><strong>Description:</strong> <%= listing.description %></li>
+          <li class="list-group-item"><strong>Price:</strong> &#8377; <%= listing.price.toLocaleString("en-IN") %> /Night</li>
+          <li class="list-group-item"><strong>Location:</strong> <%= listing.location %></li>
+          <li class="list-group-item"><strong>Country:</strong> <%= listing.country %></li>
+        </ul>
+        
+        <!-- Edit and Delete Buttons -->
+        <div class="d-flex justify-content-between mt-3">
+          <a href="/listings/<%= listing._id %>/edit" class="btn btn-warning">Edit this Listing</a>
+          <form method="POST" action="/listings/<%= listing._id %>?_method=DELETE">
+            <button class="btn btn-danger">Delete this Listing</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Review Section -->
+    <div class="card shadow-lg mb-4">
+      <div class="card-header bg-primary text-white">
+        <h5>Reviews</h5>
+      </div>
+      <div class="card-body">
+        <ul class="list-group">
+          <% for (review of listing.reviews){ %>
+            <li class="list-group-item">
+              <h6 class="card-title"><%= review.Comment %></h6>
+              <p class="card-text"><strong>Rating:</strong> <%= review.Rating %></p>
+              <form method="post" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
+                <button class="btn btn-outline-danger">Delete</button>
+              </form>
+            </li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Leave a Review Form -->
+    <div class="card shadow-lg">
+      <div class="card-header bg-success text-white">
+        <h5>Leave a Review</h5>
+      </div>
+      <div class="card-body">
+        <form action="/listings/<%= listing.id %>/reviews" method="post">
+          <div class="mb-3">
+            <label for="Rating" class="form-label">Rating</label>
+            <input type="range" min="1" max="5" id="Rating" name="review[Rating]" class="form-range">
+          </div>
+          <div class="mb-3">
+            <label for="Comment" class="form-label">Comment</label>
+            <textarea name="review[Comment]" class="form-control" id="comment" cols="50" rows="5" placeholder="Enter your review"></textarea>
+          </div>
+          <button class="btn btn-success w-100">Submit Review</button>
+        </form>
+      </div>
+    </div>
+    
+  </div>
+
+  <script src="/js/script.js"></script>
+
+</body>

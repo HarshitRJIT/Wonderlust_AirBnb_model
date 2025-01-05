@@ -1,0 +1,52 @@
+<% layout("/layouts/boilerplate") %>
+
+<body class="bg-light">
+
+  <!-- Container to center the form -->
+  <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    
+    <!-- Form Card -->
+    <div class="card shadow-lg p-4" style="width: 100%; max-width: 600px;">
+      <h3 class="text-center text-primary mb-4">Create a New Listing</h3>
+      
+      <!-- Form -->
+      <form method="POST" action="/listings" novalidate>
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input name="listing[title]" placeholder="Enter Your Title" type="text" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <textarea name="listing[description]" placeholder="Enter description" class="form-control" required></textarea>
+        </div>
+
+        <div class="mb-3">
+          <label for="image" class="form-label">Image Link</label>
+          <input name="listing[image]" placeholder="Enter image URL/Link" type="text" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+          <label for="price" class="form-label">Price in ₹</label>
+          <input name="listing[price]" placeholder="Enter price" type="number" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="country" class="form-label">Country</label>
+          <input name="listing[country]" placeholder="Enter country" type="text" class="form-control" required />
+        </div>
+
+        <div class="mb-3">
+          <label for="location" class="form-label">Location</label>
+          <input name="listing[location]" placeholder="Enter location" type="text" class="form-control" required />
+        </div>
+
+        <button class="btn btn-primary w-100">Add Listing</button>
+      </form>
+    </div>
+    
+  </div>
+
+  <script src="/js/script.js"></script>
+
+</body>

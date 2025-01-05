@@ -1,0 +1,36 @@
+<% layout("/layouts/boilerplate") %>
+
+<body class="bg-light">
+
+  <!-- Page Heading -->
+  <div class="container my-5">
+    <h3 class="text-center text-primary mb-4">All Listings</h3>
+
+    <!-- Create New Listing Button (optional) -->
+    <!-- <form method="GET" action="/listings/new">
+      <button class="btn btn-success mb-3">Create New Listing</button>
+    </form> -->
+
+    <!-- Listings Grid -->
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+      <% for(let listing of allListings) { %>
+        <div class="col">
+          <div class="card shadow-sm">
+            <img src="<%= listing.image %>" class="card-img-top" alt="<%= listing.title %>" style="height: 200px; object-fit: cover;">
+            <div class="card-body">
+              <h5 class="card-title text-center"><%= listing.title %></h5>
+              <p class="card-text text-center">
+                <strong>&#8377; <%= listing.price%> /Night</strong>
+              </p>
+              <p class="card-text text-muted">
+                <em><%= listing.location %></em>
+              </p>
+              <a href="/listings/<%= listing._id %>" class="btn btn-primary w-100">View Details</a>
+            </div>
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </div>
+
+</body>

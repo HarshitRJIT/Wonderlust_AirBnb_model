@@ -1,0 +1,57 @@
+<% layout("/layouts/boilerplate") %>
+<body>
+  <!-- Navbar (optional, for navigation) -->
+  <nav class="navbar navbar-expand-md navbar-light bg-light border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">Wanderlust</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/listings">Listings</a></li>
+          <li class="nav-item"><a class="nav-link btn btn-primary text-white" href="/book" role="button">Book Now</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Booking Form Section -->
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card shadow">
+          <div class="card-header text-center bg-primary text-white">
+            <h3>Book Now</h3>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center mb-4"><%= listing.title %></h5>
+            <p class="text-muted text-center mb-4">Location: <%= listing.location %></p>
+            <form action="/book/<%= listing._id %>" method="POST">
+              <!-- Date Selection -->
+              <div class="mb-3">
+                <label for="date" class="form-label">Select Date</label>
+                <input type="date" class="form-control" id="date" name="date" required>
+              </div>
+              <!-- Number of Guests -->
+              <div class="mb-3">
+                <label for="guests" class="form-label">Number of Guests</label>
+                <input type="number" class="form-control" id="guests" name="guests" min="1" max="10" required>
+              </div>
+              <!-- Contact Information -->
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-success w-100">Confirm Booking</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/majorproject/public/js/script.js"></script>
+</body>
+

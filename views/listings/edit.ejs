@@ -1,0 +1,67 @@
+<% layout("/layouts/boilerplate") %>
+
+<body class="bg-dark text-white">
+
+  <!-- Full Screen Container -->
+  <div class="container-fluid d-flex justify-content-center align-items-center min-vh-100">
+    <div class="row w-100">
+      <div class="col-md-6 offset-md-3 bg-light p-4 rounded shadow">
+        <h3 class="text-center mb-4">Edit Your Listing</h3>
+
+        <form method="POST" action="/listings/<%= listing._id %>?_method=PUT">
+          
+          <!-- Title Input -->
+          <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input name="listing[title]" value="<%= listing.title %>" type="text" class="form-control" required />
+          </div>
+
+          <!-- Description Input -->
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea name="listing[description]" class="form-control" required><%= listing.description %></textarea>
+          </div>
+
+          <!-- Image URL Input -->
+          <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input name="listing[image]" value="<%= listing.image %>" type="text" class="form-control" required />
+          </div>
+
+          <!-- Price Input -->
+          <div class="mb-3">
+            <label for="price" class="form-label">Price</label>
+            <input name="listing[price]" value="<%= listing.price %>" type="number" class="form-control" required />
+          </div>
+
+          <!-- Country Input -->
+          <div class="mb-3">
+            <label for="country" class="form-label">Country</label>
+            <input name="listing[country]" value="<%= listing.country %>" type="text" class="form-control" required />
+          </div>
+
+          <!-- Location Input -->
+          <div class="mb-3">
+            <label for="location" class="form-label">Location</label>
+            <input name="listing[location]" value="<%= listing.location %>" type="text" class="form-control" required />
+          </div>
+
+          <!-- Submit Button -->
+          <div class="text-center">
+            <button class="btn btn-dark btn-lg">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Background Image Styling -->
+  <style>
+    body {
+      background: url('https://via.placeholder.com/1920x1080') no-repeat center center fixed;
+      background-size: cover;
+    }
+  </style>
+
+  <script src="/majorproject/public/js/script.js"></script>
+</body>

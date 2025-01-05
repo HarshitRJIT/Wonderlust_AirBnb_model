@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light border-bottom sticky-top">
+    <!-- Container for the Navbar -->
+    <div class="container-fluid">
+        <!-- Logo or Brand Section -->
+        <a class="navbar-brand" href="/">
+            <i class="fa-solid fa-compass" style="font-size: 30px; color: #007bff;"></i> <!-- Custom logo styling -->
+        </a>
+        
+        <!-- Navbar Toggle Button for Small Screens -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" 
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Collapsible Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav me-auto">
+                <!-- Active link styling for the Home page -->
+                <a class="nav-link active" href="/" style="font-size: 18px; color: #333; font-weight: bold;">Home</a>
+                
+                <!-- Normal Links -->
+                <a class="nav-link" href="/listings" style="font-size: 18px; color: #555;">Listings</a>
+                <a class="nav-link" href="/listings/new" style="font-size: 18px; color: #555;">Add New Listings</a>
+            </div>
+            
+            <!-- Login and Signup Buttons -->
+            <div class="d-flex">
+                <a href="/login" class="btn btn-outline-primary me-2" style="font-size: 16px;">Login</a>
+                <a href="/signup" class="btn btn-primary" style="font-size: 16px;">Signup</a>
+            </div>
+        </div>
+    </div>
+  </nav>
+  
+  <!-- Additional custom CSS for design enhancement -->
+  <style>
+    /* Styling for Navbar background */
+    .navbar {
+        background-color: #f8f9fa; /* Light background */
+    }
+  
+    /* Styling for Navbar when user hovers over the links */
+    .navbar-nav .nav-link:hover {
+        color: #007bff !important; /* Blue color for active links */
+        text-decoration: underline;
+    }
+  
+    /* Active link styles */
+    .navbar-nav .nav-link.active {
+        color: #007bff !important; /* Blue for active link */
+    }
+  
+    /* Styling for the brand logo */
+    .navbar-brand {
+        font-size: 1.5rem; /* Font size for the logo */
+        color: #007bff; /* Blue color */
+    }
+  
+    /* Customizing the toggle button for smaller screens */
+    .navbar-toggler-icon {
+        background-color: #007bff;
+    }
+  
+    /* Button hover styles */
+    .btn:hover {
+        opacity: 0.9;
+    }
+  </style>
+  
