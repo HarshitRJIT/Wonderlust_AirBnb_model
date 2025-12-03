@@ -8,7 +8,10 @@
     <!-- Listing Details Card -->
     <div class="card shadow-lg mb-4">
       <div class="card-body">
+        
         <h3 class="card-title text-center text-primary"><%= listing.title %></h3>
+        <h3 class="card-title text-center text-primary"><%= listing.country %></h3>
+        
         <img src="<%= listing.image %>" class="card-img-top show-img mb-3" alt="listing_image">
         <a href="/book/<%= listing._id %>" class="btn btn-success">Book Now</a>
         <ul class="list-group">

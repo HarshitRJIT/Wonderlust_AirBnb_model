@@ -6,12 +6,22 @@
   <div class="container my-5">
     <h3 class="text-center text-primary mb-4">All Listings</h3>
 
-    <!-- Create New Listing Button (optional) -->
-    <!-- <form method="GET" action="/listings/new">
-      <button class="btn btn-success mb-3">Create New Listing</button>
-    </form> -->
+    <!-- Summary Stats -->
+    <div class="d-flex justify-content-center mb-2">
+      <div class="text-center">
+        Total listings: <%= typeof totalCount !== 'undefined' ? totalCount : allListings.length %>
+        Countries: <%= typeof distinctCountriesCount !== 'undefined' ? distinctCountriesCount : 0 %>
+        <a href="/listings/countries-count" >View Country Details</a>
+      </div>
+    </div>
 
-    <!-- Listings Grid -->
+    <!-- Sorting Controls -->
+    <div class="d-flex justify-content-center mb-3">
+      <a href="/listings?sort=country&order=asc">Sort by Country ↑</a>
+      <a href="/listings?sort=country&order=desc">Sort by Country ↓</a>
+    </div>
+
+
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
       <% for(let listing of allListings) { %>
         <div class="col">
@@ -19,6 +29,7 @@
             <img src="<%= listing.image %>" class="card-img-top" alt="<%= listing.title %>" style="height: 200px; object-fit: cover;">
             <div class="card-body">
               <h5 class="card-title text-center"><%= listing.title %></h5>
+              <h5 class="card-title text-center"><%= listing.country %></h5>
               <p class="card-text text-center">
                 <strong>&#8377; <%= listing.price%> /Night</strong>
               </p>

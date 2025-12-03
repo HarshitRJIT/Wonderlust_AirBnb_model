@@ -1,0 +1,48 @@
+<% layout("/layouts/boilerplate") %>
+
+<body >
+  <div >
+    <div >
+      <div class>
+        <h2 >Countries Overview</h2>
+
+        <!-- Summary Stats -->
+        <div >
+          <strong>Total Listings:</strong> <%= totalListings %>
+          <strong>Countries:</strong> <%= countriesStats.length %>
+        </div>
+
+        <!-- Back Button -->
+        <div>
+          <a href="/listings">← Back to Listings</a>
+        </div>
+
+        <!-- Countries Table -->
+        <div >
+          <table >
+            <thead >
+              <tr>
+                <th>#</th>
+                <th>Country Name</th>
+                <th>Number of Listings</th>
+                <th>Percentage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% 
+                let totalCount = countriesStats.reduce((sum, c) => sum + c.count, 0);
+                countriesStats.forEach(function(country, index) {
+              %>
+                <tr>
+                  <td><%= index + 1 %></td>
+                  <td><%= country._id %></td>
+                  <td><%= country.count %></td>
+                </tr>
+              <% }) %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
